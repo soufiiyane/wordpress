@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/soufiiyane/wordpress.git
     targetRevision: main
-    path: manifests
+    path: k8s
     directory:
       recurse: true
   syncPolicy:
