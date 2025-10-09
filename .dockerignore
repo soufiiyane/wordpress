@@ -6,5 +6,5 @@ wp-content/debug.log
 wp-content/ai1wm-backups/
 wp-content/uploads
 .vscode
-rke2.pem
-wordpress.sql
+.github/
+k8s/
