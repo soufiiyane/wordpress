@@ -26,6 +26,7 @@ spec:
             volumeMounts:
             - name: uploads
               mountPath: /data
+              readOnly: true
             - name: backup
               mountPath: /backup
           volumes:
