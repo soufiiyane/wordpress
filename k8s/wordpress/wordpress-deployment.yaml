@@ -4,7 +4,7 @@ metadata:
   name: wordpress
   namespace: wordpress
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: wordpress
@@ -26,15 +26,12 @@ spec:
               name: mysql-credentials
               key: mysql-database
         - name: WORDPRESS_DB_USER
-          valueFrom:
-            secretKeyRef:
-              name: mysql-credentials
-              key: mysql-user
+          value: root
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mysql-credentials
-              key: mysql-password
+              key: mysql-root-password
         - name: WORDPRESS_TABLE_PREFIX
           value: ax_
         - name: SMTP_HOST
@@ -53,8 +50,6 @@ spec:
               key: smtp-password
         - name: WORDPRESS_CONFIG_EXTRA
           value: |
-            define( 'WP_HOME', 'https://usemirai.site' );
-            define( 'WP_SITEURL', 'https://usemirai.site' );
             define( 'FORCE_SSL_ADMIN', true );
             define( 'WPMS_ON', true );
             define( 'WPMS_SMTP_AUTH', true );
