@@ -5,9 +5,6 @@ metadata:
   namespace: wordpress
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    nginx.ingress.kubernetes.io/auth-type: basic
-    nginx.ingress.kubernetes.io/auth-secret: phpmyadmin-basic-auth
-    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - phpMyAdmin'
     nginx.ingress.kubernetes.io/proxy-body-size: "3072m"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
@@ -15,10 +12,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - db.usemirai.site
-    secretName: db-usemirai-site-tls
+    - myadminphp.usemirai.site
+    secretName: pma-usemirai-site-tls
   rules:
-  - host: db.usemirai.site
+  - host: myadminphp.usemirai.site
     http:
       paths:
       - path: /
