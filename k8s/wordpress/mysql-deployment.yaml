@@ -27,16 +27,6 @@ spec:
             secretKeyRef:
               name: mysql-credentials
               key: mysql-database
-        - name: MYSQL_USER
-          valueFrom:
-            secretKeyRef:
-              name: mysql-credentials
-              key: mysql-user
-        - name: MYSQL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-credentials
-              key: mysql-password
         ports:
         - name: mysql
           containerPort: 3306
