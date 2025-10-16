@@ -12,10 +12,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - myadminphp.usemirai.site
-    secretName: pma-usemirai-site-tls
+    - dataphp.usemirai.site
+    secretName: adminphp-usemirai-site-tls
   rules:
-  - host: myadminphp.usemirai.site
+  - host: dataphp.usemirai.site
     http:
       paths:
       - path: /
